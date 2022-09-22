@@ -1,0 +1,70 @@
+.faq {
+  background-color: $mainColor;
+  .wrapper {
+    @include wrapper;
+    padding-top:  40px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      color: #fff;
+      font-size: 28px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+  }
+
+  button {
+    margin-top: 5px;
+  }
+
+  }
+
+  .accordion {
+    background-color: #fff;
+    color: $textGray;
+    font-size: 23px;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    position: relative;
+  }
+
+  .accordion::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-image: url(../../images/icons/arrow-down-mint.svg);
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    transition: transform .4s ease-in;
+  }
+  
+  .active::after {
+      transform: translateY(-50%) rotate(180deg);
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+  
+  /* Style the accordion panel. Note: hidden by default */
+  .panel {
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    p {
+      padding: 18px;
+      text-align: start;
+    }
+  }
+}
