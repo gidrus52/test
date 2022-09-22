@@ -1,0 +1,18 @@
+.header {
+  height: 30px;
+  background-color: $mainColor;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
+  .logo {
+    display: block;
+    margin: 0 auto;
+
+    img {
+      width: 100px;
+      height: auto;
+    }
+
+  }
+}

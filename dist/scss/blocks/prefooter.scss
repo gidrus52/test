@@ -1,0 +1,56 @@
+.prefooter {
+  background-color: #ffffff;
+  opacity: 0.8;
+  background-image: repeating-linear-gradient(45deg, #fafafa 25%, transparent 25%, transparent 75%, #fafafa 75%, #fafafa), repeating-linear-gradient(45deg, #fafafa 25%, #ffffff 25%, #ffffff 75%, #fafafa 75%, #fafafa);
+  background-position: 0 0, 10px 10px;
+  background-size: 20px 20px;
+  width: 100%;
+
+  .wrapper {
+    @include wrapper;
+    padding: 50px 15px;
+    display: flex;
+    gap: 50px;
+
+    .prefooter__text {
+      flex-basis: 60%;
+      color: $textGray;
+
+      h3 {
+        font-size: 25px;
+        margin-bottom: 30px;
+        color: $mainColor;
+        opacity: .9;
+        font-weight: 600;
+        text-align: start;
+
+      }
+
+      p {
+        line-height: 27px;
+        font-size: 15px;
+        font-weight: 400;
+        text-align: start;
+      }
+
+      strong {
+        font-weight: 600;
+      }
+
+      .signature {
+        margin-top: 20px;
+        text-align: start;
+      }
+    }
+
+    .prefooter__img {
+      flex-basis: 40%;
+      flex-shrink: 1.5;
+
+      img {
+        object-fit: contain;
+        max-width: 75%;
+      }
+    }
+  }
+}

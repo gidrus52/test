@@ -1,0 +1,27 @@
+@import 'reset';
+@import 'mixins.scss';
+@import 'blocks/header.scss';
+@import 'blocks/body.scss';
+@import 'blocks/video.scss';
+@import 'blocks/ingredients.scss';
+@import 'blocks/order.scss';
+@import 'blocks/faq.scss';
+@import 'blocks/prefooter.scss';
+@import 'blocks/footer.scss';
+@import 'blocks/popup.scss';
+@import 'pages/checkout.scss';
+
+
+* {
+    text-align: center;
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+  }
+
+.hide {
+    // display: none;
+}
