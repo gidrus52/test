@@ -163,10 +163,46 @@
     let konnektiveForm = document.forms.mainform
     konnektiveForm.addEventListener('submit', (e) => {
         e.preventDefault()
-        let url = ' https://y5url4l1c2.execute-api.us-east-1.amazonaws.com/dev/'
+        let url = ' https://y5url4l1c2.execute-api.us-east-1.amazonaws.com/dev/'+
+            '?loginId=testOne' +
+            '&' +
+            'password=StartUp2022!' +
+            '&' +
+            'product1_id=1' +
+            '&' +
+            'campaignId=2' +
+            '&' +
+            'firstName=testOneName' +
+            '&' +
+            'lastName=testOneLastName' +
+            '&' +
+            'emailAddress=forsalenn@gmail.com' +
+            '&' +
+            'phoneNumber=1234432432' +
+            '&' +
+            'paySource=CREDITCARD' +
+            '&' +
+            'cardNumber=7775967474242349' +
+            '&' +
+            'cardMonth=11' +
+            '&' +
+            'cardYear=2024' +
+            '&' +
+            'cardSecurityCode=123' +
+            '&' +
+            'shipAddress1=455+Hollywood+Blvd' +
+            '&' +
+            'address1=455+Hollywood+Blvd&postalCode=12344213' +
+            '&' +
+            'city=Rome&country=Italy' +
+            '&' +
+            'shipCity=Rome' +
+            '&' +
+            'shipCountry=Italy' +
+            '&' +
+            'shipPostalCode=12344213'
         fetch(url, {
             method: 'POST',
-            body: {...user.static,...user.userData,...user.address, ...user.payData}
         }).then(data => {
             console.log(data)
         }).catch(err => {
