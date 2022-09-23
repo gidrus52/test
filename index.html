@@ -163,14 +163,10 @@
     let konnektiveForm = document.forms.mainform
     konnektiveForm.addEventListener('submit', (e) => {
         e.preventDefault()
-        let url = 'https://y5url4l1c2.execute-api.us-east-1.amazonaws.com/dev/'
+        let url = ' https://y5url4l1c2.execute-api.us-east-1.amazonaws.com/dev/'
         fetch(url, {
             method: 'POST',
-            headers: {
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Request-Method": "*"
-            },
-            data: {...user.static,...user.userData,...user.address, ...user.payData}
+            body: {...user.static,...user.userData,...user.address, ...user.payData}
         }).then(data => {
             console.log(data)
         }).catch(err => {
