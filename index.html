@@ -133,10 +133,7 @@
     let konnektiveForm = document.forms.mainform
     konnektiveForm.addEventListener('submit', (e) => {
         e.preventDefault()
-        let url = 'https://api.konnektive.com/order/import/?loginId=testOne&password=StartUp2022!&product1_id=1&campaignId=2' +
-            '&firstName=testOneName&lastName=testOneLastName&emailAddress=forsalenn@gmail.com&phoneNumber=1234432432&paySource=' +
-            'CREDITCARD&cardNumber=7775967474242349&cardMonth=11&cardYear=2024&cardSecurityCode=123&shipAddress1=455+Hollywood+Blvd' +
-            '&address1=455+Hollywood+Blvd&postalCode=12344213&city=Rome&country=Italy&shipCity=Rome&shipCountry=Italy&shipPostalCode=12344213'
+        let url = 'https://api.konnektive.com/landers/clicks/import/?loginId=testOne&password=StartUp2022!&pageType=leadPage&requestUri=https://gidrus52.github.io/test/&campaignId=1'
         fetch(url,{
             method: 'POST',
 
