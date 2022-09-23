@@ -17,7 +17,7 @@
 <div class="checkout">
     <div class="secure_checkout">
         <h2><i class="fa fa-user-lock"></i> Secure Checkout</h2>
-        <form action="" name="mainform" >
+        <form action="" name="mainform">
             <h3><i class="fa fa-user"></i> CUSTOMER INFORMATION</h3>
             <div>
                 <label for="full-name"></label>
@@ -114,12 +114,12 @@
         // script https://www.html-code-generator.com/html/drop-down/country-region
 
         // Get the country name and state name from the imported script.
-       
+
 
         // creating country name drop-down
         let option = '';
         option += '<option>select country</option>';
-       
+
         document.getElementById('country').innerHTML = option;
 
         // creating states name drop-down
@@ -127,23 +127,50 @@
         let state_code_id = document.getElementById("state-code");
 
 
-
-        
     })();
+    let user = {
+        static: {
+            loginId: "testOne",
+            password: "StartUp2022!",
+            product1_id: "1",
+            campaignId: "2",
+        },
+        userData: {
+            firstName: "testOneName",
+            lastName: "testOneLastName",
+            emailAddress: "forsalenn@gmail.com",
+        },
+        address: {
+            shipAddress1: "455 Hollywood Blvd",
+            address1: "455 Hollywood Blvd",
+            postalCode: "12344213",
+            city: "Rome",
+            country: "Italy",
+            shipCity: "Rome",
+            shipCountry: "Italy",
+            shipPostalCode: "shipPostalCode"
+        },
+        payData: {
+            paySource: "CREDITCARD",
+            cardNumber: "7775967474242349",
+            cardMonth: "11",
+            cardYear: "2024",
+            cardSecurityCode: "123",
+        }
+    }
+
+
     let konnektiveForm = document.forms.mainform
     konnektiveForm.addEventListener('submit', (e) => {
         e.preventDefault()
-        let url = 'https://api.konnektive.com/order/import/?loginId=testOne&password=StartUp2022!&product1_id=1&campaignId=2' +
-            '&firstName=testOneName&lastName=testOneLastName&emailAddress=forsalenn@gmail.com&phoneNumber=1234432432&paySource=' +
-            'CREDITCARD&cardNumber=7775967474242349&cardMonth=11&cardYear=2024&cardSecurityCode=123&shipAddress1=455+Hollywood+Blvd' +
-            '&address1=455+Hollywood+Blvd&postalCode=12344213&city=Rome&country=Italy&shipCity=Rome&shipCountry=Italy&shipPostalCode=12344213'
-        fetch(url,{
+        let url = 'https://y5url4l1c2.execute-api.us-east-1.amazonaws.com/dev/'
+        fetch(url, {
             method: 'POST',
-
             headers: {
                 "Access-Control-Allow-Origin": "*",
                 "Access-Control-Request-Method": "*"
-            }
+            },
+            data: {...user.static,...user.userData,...user.address, ...user.payData}
         }).then(data => {
             console.log(data)
         }).catch(err => {
@@ -153,7 +180,7 @@
     console.log(konnektiveForm.phone)
 
 </script>
-<script ></script>
+<script></script>
 </body>
 
 </html>
