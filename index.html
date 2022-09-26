@@ -17,15 +17,16 @@
 <div class="checkout">
     <div class="secure_checkout">
         <h2><i class="fa fa-user-lock"></i> Secure Checkout</h2>
-        <form action="" name="mainform">
+        <form action="" name="mainform" onsubmit="return false">
             <h3><i class="fa fa-user"></i> CUSTOMER INFORMATION</h3>
             <div>
                 <label for="full-name"></label>
-                <input type="text" id="full-name" name="full-name" placeholder="Your Full Name" required>
+                <input value="fdsfsd fdsfsd" type="text" id="full-name" name="full-name" placeholder="Your Full Name"
+                       required>
                 <label for="phone"></label>
-                <input type="text" id="phone" name="phone" placeholder="Phone" required>
+                <input value="12331321" type="text" id="phone" name="phone" placeholder="Phone" required>
                 <label for="email"></label>
-                <input type="text" id="email" name="email" placeholder="Email address" required>
+                <input value="test@gmail.com" type="text" id="email" name="email" placeholder="Email address" required>
             </div>
 
             //BILLING
@@ -33,7 +34,8 @@
             <h3>BILLING INFORMATION</h3>
             <div>
                 <label for="billing-address"></label>
-                <input type="text" id="billing-address" name="billing-address" placeholder="Your billing address" required>
+                <input value="ffdsfsdf" type="text" id="billing-address" name="billing-address"
+                       placeholder="Your billing address" required>
                 <div>
                     <label for="country">Country</label>
                     <select id="country">
@@ -42,14 +44,14 @@
                 </div>
                 <div>
                     <label for="state">State</label>
-                    <span id="state-code"><input type="text" id="state"></span>
+                    <span id="state-code"><input value="dsfdsf" type="text" id="state"></span>
                 </div>
                 <label for="zip-code"></label>
-                <input type="text" id="zip-code" name="zip-code" placeholder="Zip code" required>
+                <input type="text" id="zip-code" value="123213" name="zip-code" placeholder="Zip code" required>
                 <label for="city"></label>
-                <input type="text" id="city" name="city" placeholder="City" required>
+                <input type="text" id="city" value="fdsfsdf" name="city" placeholder="City" required>
                 <label>
-                    <input type="checkbox" checked="checked" name="sameadr" > Shipping address same as billing
+                    <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
                 </label>
                 <label>
                     <input type="checkbox" checked="checked" name="auto-refill">Auto Refill (optional)
@@ -61,13 +63,14 @@
             <h3>PAIMENT DETAILS</h3>
             <div>
                 <label for="card-number"></label>
-                <input type="text" id="card-number" value="7775967474242349" name="card-number" placeholder="Card number" required>
+                <input type="text" id="card-number" value="7775967474242349" name="card-number"
+                       placeholder="Card number" required>
 
                 <label for="exp-date">Card expiration date</label>
-                <input type="text" id="exp-date" name="exp-date" placeholder="MM/YYYY" required>
+                <input type="text" id="exp-date" value="11/2024" name="exp-date" placeholder="MM/YYYY" required>
 
                 <label for="cvv"></label>
-                <input type="text" id="cvv" name="cvv" placeholder="CVV" required>
+                <input type="text" id="cvv" value="123" name="cvv" placeholder="CVV" required>
             </div>
             <input type="submit" value="Buy Now" class="btn" id="submitButton">
         </form>
@@ -166,16 +169,22 @@
 
 
     let konnektiveForm = document.forms.mainform
-    konnektiveForm.addEventListener('submit', async (e) => {
+    let submitButton = document.getElementById('submitButton')
+
+
+    async function submitForm(event) {
+        console.log(event)
+        let sbmBtn = document.getElementById('submitButton')
+        sbmBtn.disabled = true
         user.userData.firstName = await document.forms.mainform['full-name'].value.split(" ")[0]
         user.userData.lastName = await document.forms.mainform['full-name'].value.split(" ")[1]
         user.userData.emailAddress = await document.forms.mainform['email'].value
-        // user.address.phoneNumber = await document.forms.mainform['phone'].value
 
-        user.address.shipCountry = await document.forms.mainform['country'].value
-        user.address.shipCity = await document.forms.mainform['city'].value
-        user.address.shipAddress1 = await document.forms.mainform['billing-address'].value
-        user.address.shipState = await document.forms.mainform['state'].value
+        user.address.phoneNumber = await document.forms.mainform['phone'].value
+        user.address.shipCountry = user.address.country = await document.forms.mainform['country'].value
+        user.address.shipCity = user.address.city = await document.forms.mainform['city'].value
+        user.address.shipAddress1 = user.address.address1 = await document.forms.mainform['billing-address'].value
+        user.address.shipState = user.address.state = await document.forms.mainform['state'].value
         user.address.shipPostalCode = await document.forms.mainform['zip-code'].value
 
         user.payData.cardNumber = await document.forms.mainform['card-number'].value
@@ -184,10 +193,8 @@
         user.payData.cardSecurityCode = await document.forms.mainform['cvv'].value
 
 
-        console.log(user)
-        e.preventDefault()
         let url = 'https://y5url4l1c2.execute-api.us-east-1.amazonaws.com/dev/' +
-                //static
+            //static
             `?loginId=${user.static.loginId}` +
             '&' +
             `password=${user.static.password}` +
@@ -195,19 +202,19 @@
             `product1_id=${user.static.product1_id}` +
             '&' +
             `campaignId=${user.static.campaignId}` +
-                //name
+            //name
             '&' +
             `firstName=${user.userData.firstName}` +
             '&' +
             `lastName=${user.userData.lastName}` +
-                //address
+            //address
             '&' +
             `emailAddress=${user.userData.emailAddress}` +
             '&' +
             `phoneNumber=${user.address.phoneNumber}` +
-                //paydata
+            //paydata
             '&' +
-            `paySource=${user.payData.cardNumber}` +
+            `paySource=${user.payData.paySource}` +
             '&' +
             `cardNumber=${user.payData.cardNumber}` +
             '&' +
@@ -217,7 +224,7 @@
             '&' +
             `cardSecurityCode=${user.payData.cardSecurityCode}` +
             '&' +
-                //address
+            //address
             `shipAddress1=${user.address.shipAddress1}` +
             '&' +
             `address1=${user.address.shipAddress1}` +
@@ -228,25 +235,37 @@
             '&' +
             `city=${user.address.shipCity}` +
             '&' +
-            `country=${user.address.shipCountry}` +
+            `country=USA` +
             '&' +
             `shipCity=${user.address.shipCity}` +
             '&' +
-            `shipCountry=${user.address.shipCountry}` +
+            `shipCountry=USA` +
             '&' +
             `shipPostalCode=${user.address.shipPostalCode}`
 
-        fetch(url, {
+        fetch('https://ya.ru', {
             method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            redirect: 'follow',
             body: {...user.static, ...user.userData, ...user.address, ...user.payData}
-        }).then(data => {
-            console.log(data)
-        }).catch(err => {
-            console.log(err)
-        })
-    })
-    console.log(konnektiveForm.phone)
+        }).then(data => data.text())
+            .then(response => {
+                    console.log(response)
+                    konnektiveForm.reset()
+                sbmBtn.disabled = false
+                }
+            )
+            .catch(err => {
+                konnektiveForm.reset()
+                sbmBtn.disabled = false
+                console.log(err)
+            })
+        console.log(event)
+    }
 
+    konnektiveForm.addEventListener('submit', submitForm)
 </script>
 <script></script>
 </body>
