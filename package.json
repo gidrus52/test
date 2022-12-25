@@ -73,6 +73,10 @@
   },
   "homepage": "https://github.com/gidrus52/test#readme",
   "description": "",
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged",
+    "commit-msg": "node scripts/verifyCommit.mjs"
+  },
   "config": {
     "commitizen": {
       "path": "node_modules/cz-customizable"
