@@ -25,7 +25,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "run test",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS -g './config/git/commitlint.js'"
+      "commit-msg": "commitlint HUSKY_GIT_PARAMS './config/git/commitlint.js'"
     }
   },
   "config": {
