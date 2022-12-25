@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo 1111",
     "prepare": "husky install",
-    "msg": "echo 1111"
+    "msg": "echo 123412"
   },
   "repository": {
     "type": "git",
