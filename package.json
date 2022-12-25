@@ -19,9 +19,10 @@
   "homepage": "https://github.com/gidrus52/test#readme",
   "devDependencies": {
     "@commitlint/cli": "^17.3.0",
+    "cz-customizable": "^7.0.0",
     "husky": "^8.0.2"
   },
- "husky": {
+  "husky": {
     "hooks": {
       "pre-commit": "run test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS -g './config/git/commitlint.js'"
