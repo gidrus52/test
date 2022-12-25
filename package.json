@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo fdfsdf",
-    "prepare": "husky install"
+    "test": "echo 1111",
+    "prepare": "husky install",
+    "msg": "echo 1111"
   },
   "repository": {
     "type": "git",
@@ -24,8 +25,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "run test",
-      "commit-msg": "commitlint HUSKY_GIT_PARAMS './config/git/commitlint.js'"
+      "pre-commit": "echo 'iiiiii'",
+      "commit-msg": "run test"
     }
   },
   "config": {
