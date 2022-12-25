@@ -77,6 +77,10 @@
     "pre-commit": "pnpm lint-staged",
     "commit-msg": "node scripts/verifyCommit.mjs"
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS -g './config/git/commitlint.js'"
+    },
   "config": {
     "commitizen": {
       "path": "node_modules/cz-customizable"
@@ -86,3 +90,5 @@
     }
   }
 }
+}
+
