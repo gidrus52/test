@@ -1,16 +1,20 @@
 {
   "devDependencies": {
-    "cz-customizable": "^7.0.0",
     "@commitlint/cli": "^7.2.1",
-    "husky": "^8.0.2"
+    "cz-customizable": "^7.0.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.1.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.1"
   },
   "name": "test",
   "version": "1.0.0",
   "main": "script.js",
-  "dependencies": {
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -25,9 +29,13 @@
   "description": "",
   "husky": {
     "hooks": {
-      "pre-commit": "commitlint -E HUSKY_GIT_PARAMS -g './config/git/husky/commitlint.js'"
-    },
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:fix",
+      "git add"
+    ]
   }
 }
-
-
