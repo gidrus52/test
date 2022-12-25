@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "run git cz",
+    "test": "echo fdfsdf",
     "prepare": "husky install"
   },
   "repository": {
@@ -18,11 +18,13 @@
   },
   "homepage": "https://github.com/gidrus52/test#readme",
   "devDependencies": {
+    "@commitlint/cli": "^17.3.0",
     "husky": "^8.0.2"
   },
-  "husky": {
-    "hook": {
-      "pre-commit": "run test"
+ "husky": {
+    "hooks": {
+      "pre-commit": "run test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS -g './config/git/commitlint.js'"
     }
   },
   "config": {
