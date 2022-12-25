@@ -1,3 +1,1 @@
-i'm cz
-else commit
-else
+i'm husky
