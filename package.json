@@ -1,0 +1,84 @@
+{
+  "devDependencies": {
+    "cz-customizable": "^7.0.0"
+  },
+  "name": "test",
+  "version": "1.0.0",
+  "main": "script.js",
+  "dependencies": {
+    "balanced-match": "^1.0.2",
+    "ansi-escapes": "^3.2.0",
+    "ansi-regex": "^4.1.1",
+    "chalk": "^2.4.2",
+    "chardet": "^0.7.0",
+    "cli-cursor": "^2.1.0",
+    "brace-expansion": "^1.1.11",
+    "cli-width": "^2.2.1",
+    "ansi-styles": "^3.2.1",
+    "color-convert": "^1.9.3",
+    "color-name": "^1.1.3",
+    "editor": "^1.0.0",
+    "concat-map": "^0.0.1",
+    "glob": "^7.2.3",
+    "fs.realpath": "^1.0.0",
+    "figures": "^2.0.0",
+    "escape-string-regexp": "^1.0.5",
+    "inflight": "^1.0.6",
+    "find-config": "^1.0.0",
+    "has-flag": "^3.0.0",
+    "inherits": "^2.0.4",
+    "mimic-fn": "^1.2.0",
+    "iconv-lite": "^0.4.24",
+    "is-fullwidth-code-point": "^2.0.0",
+    "inquirer": "^6.5.2",
+    "external-editor": "^3.1.0",
+    "lodash": "^4.17.21",
+    "minimatch": "^3.1.2",
+    "mkdirp": "^0.5.6",
+    "minimist": "^1.2.7",
+    "os-homedir": "^1.0.2",
+    "mute-stream": "^0.0.7",
+    "path-is-absolute": "^1.0.1",
+    "run-async": "^2.4.1",
+    "onetime": "^2.0.1",
+    "os-tmpdir": "^1.0.2",
+    "rimraf": "^2.6.3",
+    "rxjs": "^6.6.7",
+    "once": "^1.4.0",
+    "safer-buffer": "^2.1.2",
+    "restore-cursor": "^2.0.0",
+    "strip-ansi": "^5.2.0",
+    "supports-color": "^5.5.0",
+    "string-width": "^2.1.1",
+    "through": "^2.3.8",
+    "tmp": "^0.0.33",
+    "signal-exit": "^3.0.7",
+    "user-home": "^2.0.0",
+    "temp": "^0.9.4",
+    "wrappy": "^1.0.2",
+    "tslib": "^1.14.1",
+    "word-wrap": "^1.2.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gidrus52/test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gidrus52/test/issues"
+  },
+  "homepage": "https://github.com/gidrus52/test#readme",
+  "description": "",
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "config/git/commitizen.js"
+    }
+  }
+}
