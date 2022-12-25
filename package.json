@@ -3,6 +3,7 @@
     "@commitlint/cli": "^7.2.1",
     "cz-customizable": "^7.0.0",
     "husky": "^8.0.2",
+
     "lint-staged": "^13.1.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
@@ -14,7 +15,8 @@
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "prepare": "husky install",
+     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "repository": {
     "type": "git",
