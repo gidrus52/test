@@ -25,8 +25,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "echo 'iiiiii'",
-      "commit-msg": "run test"
+      "commit-msg": "run msg"
     }
   },
   "config": {
