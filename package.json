@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo 1111",
+    "test": "echo 12312444455",
     "prepare": "husky install",
     "msg": "echo 123412"
   },
